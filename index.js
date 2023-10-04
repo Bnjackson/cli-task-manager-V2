@@ -5,7 +5,6 @@ const listModule = require('./commands/list.js');
 const addModule = require('./commands/add.js');
 const updateModule = require('./commands/update.js');
 const deleteModule = require('./commands/delete.js');
-const database = require('./utils/databse.js');
 
 console.log(`
 This program is a CLI based task manager, that allows you to list, add, update, or delete tasks all from the command line.
@@ -45,7 +44,7 @@ async function callCommand(command) {
 }
 
 function getAnotherTask() {
-    const message = 'Would you like to enter another task? yes/no ';
+    const message = 'Would you like to enter another command? yes/no ';
     const allowedInputs = ['yes', 'y', 'no', 'n'];
     const userChoice = inputModule.getUserCommand(message, allowedInputs);
     if (userChoice === 'yes' || userChoice === 'y') {
